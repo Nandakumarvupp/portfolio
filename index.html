@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandakumar Vuppalapati - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="mode-toggle">
+                <button id="modeToggle">Toggle Dark Mode</button>
+            </div>
+            <img src="profile-pic.jpg" alt="Nandakumar Vuppalapati Profile Picture" class="profile-pic">
+            <h1>Nandakumar Vuppalapati</h1>
+            <p>Cybersecurity Enthusiast | M.S. in Computer Science, Artificial Intelligence</p>
+        </header>
+
+        <!-- Blogs Section -->
+        <div class="section">
+            <h2>Blogs</h2>
+            <div class="blog-list">
+                <a href="#blog1" class="blog-link">Securing the Cloud: Best Practices for Azure and Microsoft 365</a>
+                <a href="#blog2" class="blog-link">Understanding AES Encryption: Building a Password Manager</a>
+            </div>
+
+            <div id="blog1" class="blog-content">
+                <h3>Securing the Cloud: Best Practices for Azure and Microsoft 365</h3>
+                <p>
+                    Cloud security is more critical than ever with the rise of remote work and digital transformation. In this blog, I explore key strategies to secure Azure and Microsoft 365 environments. Topics include implementing robust Public Key Infrastructure (PKI), using TLS/SSL for secure communication, and leveraging tools like Splunk for monitoring. I also discuss certificate lifecycle management and how to use Active Directory Certificate Services (ADCS) to enhance security.
+                </p>
+            </div>
+
+            <div id="blog2" class="blog-content">
+                <h3>Understanding AES Encryption: Building a Password Manager</h3>
+                <p>
+                    AES-256 encryption is a cornerstone of modern cybersecurity. In this blog, I walk through my project of building a password manager using Python, SQLite, and Tkinter. I explain how AES encryption ensures data confidentiality, the role of secure authentication, and the importance of encrypted credential storage. This project highlights practical applications of cryptography in everyday tools.
+                </p>
+            </div>
+        </div>
+
+        <!-- Resume Section -->
+        <div class="section">
+            <h2>Resume</h2>
+            <div class="resume-section">
+                <div class="resume-preview" id="resumePreview">
+                    <h3>Preview <span class="toggle-preview" id="togglePreview">[Hide]</span></h3>
+                    <div id="previewContent">
+                        <p><strong>Nandakumar Vuppalapati</strong></p>
+                        <p>(424) 366-6034 | vuppalapatinandakumar@gmail.com</p>
+                        <p><strong>Summary:</strong> Driven Master's student in Computer Science, graduating December 2025, with expertise in cybersecurity, cryptography, and cloud security. Proficient in Python and PowerShell, seeking opportunities to grow as a cybersecurity engineer.</p>
+                        <p><strong>Technical Skills:</strong></p>
+                        <ul>
+                            <li>Cybersecurity: PKI, TLS/SSL, Cryptography, Certificate Lifecycle Management</li>
+                            <li>Programming: Python, PowerShell, Bash</li>
+                            <li>Cloud Security: Azure, Microsoft 365, AWS</li>
+                            <li>Tools: Wireshark, Nmap, Splunk, Burp Suite, Nessus</li>
+                        </ul>
+                        <p><strong>Projects:</strong></p>
+                        <ul>
+                            <li><strong>AES-Encrypted Password Manager (Jan 2024 - May 2024):</strong> Developed a secure password manager using AES-256 encryption, SQLite, and Tkinter.</li>
+                            <li><strong>Network Vulnerability Scanner (Aug 2024 - Dec 2024):</strong> Built a tool using Python, Nmap, and Wireshark to detect network vulnerabilities.</li>
+                        </ul>
+                        <p><strong>Education:</strong></p>
+                        <p>M.S. in Computer Science, Artificial Intelligence, University of South Dakota (Jan 2024 - Dec 2025)</p>
+                        <p><strong>Certifications:</strong> CompTIA Security+</p>
+                    </div>
+                </div>
+                <div class="resume-download">
+                    <a href="Nandakumar.pdf" download>Download Resume</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="contact-list">
+                <p>
+                    <span class="contact-icon">✉️</span>
+                    <a href="mailto:vuppalapatinandakumar@gmail.com">vuppalapatinandakumar@gmail.com</a>
+                </p>
+                <p>
+                    <span class="contact-icon">🔗</span>
+                    <a href="https://www.linkedin.com/in/nandakumar-vuppalapati-12b41932a" target="_blank">LinkedIn Profile</a>
+                </p>
+                <p>
+                    <span class="contact-icon">🐙</span>
+                    <a href="https://nandakumarvupp.github.io/portfolio/" target="_blank">GitHub Portfolio</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
