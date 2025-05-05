@@ -6,21 +6,21 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     color: #333;
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
 
 body.dark-mode {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
     color: #e0e0e0;
 }
 
 /* Navigation Bar Styles */
 .navbar {
     background: linear-gradient(90deg, #ffffff, #f0f0f0);
-    border-bottom: 3px solid #3498db; /* Matching page theme */
+    border-bottom: 3px solid #3498db;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,7 +30,7 @@ body.dark-mode {
 
 body.dark-mode .navbar {
     background: linear-gradient(90deg, #2c2c2c, #3a3a3a);
-    border-bottom: 3px solid #5da8e8; /* Matching dark mode theme */
+    border-bottom: 3px solid #5da8e8;
 }
 
 .navbar ul {
@@ -74,16 +74,20 @@ body.dark-mode .nav-link:hover {
 
 header {
     text-align: center;
-    padding: 80px 0;
-    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    padding: 100px 0;
     position: relative;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-body.dark-mode header {
-    background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .hero-content {
@@ -119,12 +123,12 @@ body.dark-mode #modeToggle {
 }
 
 header .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 4px solid #3498db;
+    border: 5px solid #3498db;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -139,7 +143,7 @@ body.dark-mode header .profile-pic {
 }
 
 header h1 {
-    font-size: 2.8em;
+    font-size: 3em;
     color: #2c3e50;
     font-weight: 700;
     letter-spacing: 1px;
@@ -150,7 +154,7 @@ body.dark-mode header h1 {
 }
 
 header p {
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: #7f8c8d;
     font-weight: 300;
 }
@@ -244,32 +248,91 @@ body.dark-mode .section h2 {
     border-bottom: 3px solid #5da8e8;
 }
 
-/* Portfolio Section */
-.project-card {
+/* Timeline for Portfolio */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #3498db;
+    transform: translateX(-50%);
+}
+
+body.dark-mode .timeline:before {
+    background: #5da8e8;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-content {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 15px;
-    margin-bottom: 20px;
+    position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-body.dark-mode .project-card {
+body.dark-mode .timeline-content {
     background: #3a3a3a;
 }
 
-.project-card:hover {
-    transform: translateY(-3px);
+.timeline-content:hover {
+    transform: scale(1.02);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.project-card h3 {
+.timeline-content h3 {
     font-size: 1.5em;
     color: #2c3e50;
     margin-bottom: 10px;
 }
 
-body.dark-mode .project-card h3 {
+body.dark-mode .timeline-content h3 {
     color: #e0e0e0;
+}
+
+.timeline-content:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    border-radius: 50%;
+}
+
+body.dark-mode .timeline-content:before {
+    background: #5da8e8;
+}
+
+.timeline-item:nth-child(odd) .timeline-content:before {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-content:before {
+    left: -10px;
 }
 
 .blog-list a {
@@ -478,7 +541,19 @@ body.dark-mode .back-to-top:hover {
         padding: 20px;
     }
 
-    .project-card {
-        padding: 15px;
+    .timeline:before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 40px;
+    }
+
+    .timeline-content:before {
+        left: -30px !important;
+        right: auto !important;
     }
 }
