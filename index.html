@@ -40,14 +40,31 @@
             </p>
         </div>
 
-        <!-- Portfolio Section (Placeholder for future content) -->
+        <!-- Portfolio Section -->
         <div class="section" id="portfolio">
             <h2>Portfolio</h2>
-            <p>Explore my projects and achievements in cybersecurity and artificial intelligence.</p>
-            <ul>
-                <li><strong>AES-Encrypted Password Manager (Jan 2024 - May 2024):</strong> Developed a secure password manager using AES-256 encryption, SQLite, and Tkinter.</li>
-                <li><strong>Network Vulnerability Scanner (Aug 2024 - Dec 2024):</strong> Built a tool using Python, Nmap, and Wireshark to detect network vulnerabilities.</li>
-            </ul>
+            <div class="project">
+                <h3>AES-Encrypted Password Manager (Jan 2024 - May 2024)</h3>
+                <p>
+                    I developed a secure password manager to address the growing need for data protection in personal applications. The project utilized AES-256 encryption to ensure the confidentiality of user credentials, with SQLite as the backend for encrypted storage. I implemented a user-friendly GUI using Tkinter, allowing seamless interaction for users to store, retrieve, and manage their passwords securely.
+                </p>
+                <p>
+                    <strong>Technologies Used:</strong> Python, SQLite, Tkinter, PyCrypto (for AES encryption).<br>
+                    <strong>Challenges:</strong> Ensuring secure key management for AES encryption and preventing SQL injection in SQLite queries.<br>
+                    <strong>Outcome:</strong> Successfully created a functional password manager with robust encryption, capable of securely storing user credentials and providing a simple interface for password management.
+                </p>
+            </div>
+            <div class="project">
+                <h3>Network Vulnerability Scanner (Aug 2024 - Dec 2024)</h3>
+                <p>
+                    I built a network vulnerability scanner to identify potential security risks in network environments. The tool uses Python and Nmap to scan for open ports and services, while Wireshark is employed to analyze network traffic and detect vulnerabilities. The scanner also includes basic intrusion detection features to alert users of potential threats.
+                </p>
+                <p>
+                    <strong>Technologies Used:</strong> Python, Nmap, Wireshark.<br>
+                    <strong>Challenges:</strong> Parsing and interpreting Nmap scan results accurately, and handling large volumes of network traffic data in Wireshark.<br>
+                    <strong>Outcome:</strong> Delivered a reliable tool that identifies network vulnerabilities, provides actionable insights, and supports basic intrusion detection, enhancing network security for small-scale environments.
+                </p>
+            </div>
         </div>
 
         <!-- Blogs Section -->
@@ -101,7 +118,8 @@
                     </div>
                 </div>
                 <div class="resume-download">
-                    <a href="Nandakumar.pdf" download>Download Resume</a>
+                    <a href="Nandakumar.pdf" target="_blank" class="preview-btn">Preview Resume</a>
+                    <a href="Nandakumar.pdf" download class="download-btn">Download Resume</a>
                 </div>
             </div>
         </div>
@@ -125,6 +143,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
