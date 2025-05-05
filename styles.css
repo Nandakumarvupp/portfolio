@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -20,17 +20,17 @@ body.dark-mode {
 /* Navigation Bar Styles */
 .navbar {
     background: linear-gradient(90deg, #ffffff, #f0f0f0);
-    border-bottom: 2px solid #ddd;
+    border-bottom: 3px solid #3498db; /* Matching page theme */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
 }
 
 body.dark-mode .navbar {
     background: linear-gradient(90deg, #2c2c2c, #3a3a3a);
-    border-bottom: 2px solid #444;
+    border-bottom: 3px solid #5da8e8; /* Matching dark mode theme */
 }
 
 .navbar ul {
@@ -48,7 +48,7 @@ body.dark-mode .navbar {
     color: #2c3e50;
     text-decoration: none;
     font-size: 1.1em;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -74,35 +74,38 @@ body.dark-mode .nav-link:hover {
 
 header {
     text-align: center;
-    padding: 60px 0;
+    padding: 80px 0;
     background: linear-gradient(135deg, #ffffff, #f0f0f0);
-    border-bottom: 1px solid #ddd;
     position: relative;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    background-attachment: fixed;
-    background-size: cover;
+    overflow: hidden;
 }
 
 body.dark-mode header {
     background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
-    border-bottom: 1px solid #444;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .mode-toggle {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
 }
 
 #modeToggle {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: #3498db;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 0.9em;
+    font-weight: 500;
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -116,25 +119,27 @@ body.dark-mode #modeToggle {
 }
 
 header .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid #3498db;
-    transition: transform 0.3s;
+    border: 4px solid #3498db;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 header .profile-pic:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
 }
 
 body.dark-mode header .profile-pic {
     border-color: #5da8e8;
+    box-shadow: 0 0 20px rgba(93, 168, 232, 0.5);
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: #2c3e50;
     font-weight: 700;
     letter-spacing: 1px;
@@ -145,20 +150,72 @@ body.dark-mode header h1 {
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #7f8c8d;
-    font-style: italic;
+    font-weight: 300;
 }
 
 body.dark-mode header p {
     color: #b0b0b0;
 }
 
+/* Animated Text */
+.animate-text {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+header h1.animate-text {
+    animation-delay: 0.3s;
+}
+
+header p.animate-text {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Wave Animation */
+.wave, .dark-mode-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+
+.dark-mode-wave {
+    display: none;
+}
+
+body.dark-mode .wave {
+    display: none;
+}
+
+body.dark-mode .dark-mode-wave {
+    display: block;
+}
+
+.wave svg, .dark-mode-wave svg {
+    width: 100%;
+    height: 100%;
+}
+
 .section {
     background: #fff;
-    margin: 30px 0;
-    padding: 30px;
-    border-radius: 15px;
+    margin: 40px 0;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -174,30 +231,44 @@ body.dark-mode .section {
 }
 
 .section h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     color: #2c3e50;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #3498db;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3498db;
     display: inline-block;
     font-weight: 600;
 }
 
 body.dark-mode .section h2 {
     color: #e0e0e0;
-    border-bottom: 2px solid #5da8e8;
+    border-bottom: 3px solid #5da8e8;
 }
 
-.project {
+/* Portfolio Section */
+.project-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
     margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project h3 {
-    font-size: 1.4em;
+body.dark-mode .project-card {
+    background: #3a3a3a;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    font-size: 1.5em;
     color: #2c3e50;
     margin-bottom: 10px;
 }
 
-body.dark-mode .project h3 {
+body.dark-mode .project-card h3 {
     color: #e0e0e0;
 }
 
@@ -233,74 +304,25 @@ body.dark-mode .blog-content {
 
 .resume-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.resume-preview, .resume-download {
-    flex: 1;
-}
-
-.resume-preview {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-body.dark-mode .resume-preview {
-    background: #3a3a3a;
-}
-
-.resume-preview h3 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-body.dark-mode .resume-preview h3 {
-    color: #e0e0e0;
-}
-
-.toggle-preview {
-    font-size: 0.9em;
-    color: #3498db;
-    cursor: pointer;
-}
-
-body.dark-mode .toggle-preview {
-    color: #5da8e8;
-}
-
-.toggle-preview:hover {
-    text-decoration: underline;
-}
-
-.resume-preview p, .resume-preview li {
-    font-size: 0.95em;
-    color: #555;
-}
-
-body.dark-mode .resume-preview p, body.dark-mode .resume-preview li {
-    color: #d0d0d0;
-}
-
 .resume-download {
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .preview-btn, .download-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 1.1em;
+    font-weight: 500;
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -417,8 +439,9 @@ body.dark-mode .back-to-top:hover {
         flex-direction: column;
     }
 
-    .resume-preview, .resume-download {
-        width: 100%;
+    .resume-download {
+        flex-direction: column;
+        gap: 10px;
     }
 
     header .profile-pic {
@@ -426,13 +449,21 @@ body.dark-mode .back-to-top:hover {
         height: 120px;
     }
 
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
     .mode-toggle {
-        top: 5px;
-        right: 5px;
+        top: 10px;
+        right: 10px;
     }
 
     #modeToggle {
-        padding: 6px 12px;
+        padding: 8px 16px;
         font-size: 0.8em;
     }
 
@@ -441,5 +472,13 @@ body.dark-mode .back-to-top:hover {
         height: 40px;
         bottom: 15px;
         right: 15px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .project-card {
+        padding: 15px;
     }
 }
