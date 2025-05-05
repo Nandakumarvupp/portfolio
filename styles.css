@@ -17,10 +17,56 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .navbar {
+    background-color: #2c2c2c;
+    border-bottom: 2px solid #444;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+body.dark-mode .nav-link {
+    color: #e0e0e0;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #5da8e8;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 60px; /* Adjusted to avoid overlap with sticky nav */
 }
 
 header {
@@ -236,6 +282,11 @@ body.dark-mode .resume-download a:hover {
 .contact-icon {
     margin-right: 10px;
     font-size: 1.2em;
+    color: #3498db;
+}
+
+body.dark-mode .contact-icon {
+    color: #5da8e8;
 }
 
 .contact-list a {
@@ -252,6 +303,15 @@ body.dark-mode .contact-list a {
 }
 
 @media (max-width: 768px) {
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar li {
+        margin: 10px 15px;
+    }
+
     .resume-section {
         flex-direction: column;
     }
