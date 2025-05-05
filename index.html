@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -27,9 +29,22 @@
             <div class="mode-toggle">
                 <button id="modeToggle">Toggle Dark Mode</button>
             </div>
-            <img src="profile-pic.jpg" alt="Nandakumar Vuppalapati Profile Picture" class="profile-pic">
-            <h1>Nandakumar Vuppalapati</h1>
-            <p>Cybersecurity Enthusiast | M.S. in Computer Science, Artificial Intelligence</p>
+            <div class="hero-content">
+                <img src="profile-pic.jpg" alt="Nandakumar Vuppalapati Profile Picture" class="profile-pic">
+                <h1 class="animate-text">Nandakumar Vuppalapati</h1>
+                <p class="animate-text">Cybersecurity Enthusiast | M.S. in Computer Science, Artificial Intelligence</p>
+            </div>
+            <!-- Wave Animation -->
+            <div class="wave">
+                <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+                    <path d="M0,150 L1440,150 L1440,50 C1200,120 960,0 720,50 C480,100 240,150 0,50 Z" fill="#ffffff"></path>
+                </svg>
+            </div>
+            <div class="wave dark-mode-wave">
+                <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+                    <path d="M0,150 L1440,150 L1440,50 C1200,120 960,0 720,50 C480,100 240,150 0,50 Z" fill="#2c2c2c"></path>
+                </svg>
+            </div>
         </header>
 
         <!-- About Me Section -->
@@ -43,26 +58,28 @@
         <!-- Portfolio Section -->
         <div class="section" id="portfolio">
             <h2>Portfolio</h2>
-            <div class="project">
+            <div class="project-card">
                 <h3>AES-Encrypted Password Manager (Jan 2024 - May 2024)</h3>
                 <p>
-                    I developed a secure password manager to address the growing need for data protection in personal applications. The project utilized AES-256 encryption to ensure the confidentiality of user credentials, with SQLite as the backend for encrypted storage. I implemented a user-friendly GUI using Tkinter, allowing seamless interaction for users to store, retrieve, and manage their passwords securely.
+                    This project aimed to provide a secure solution for managing passwords in an era where data breaches are increasingly common. I developed a password manager that uses AES-256 encryption to protect user credentials, ensuring that even if the database is compromised, the data remains unreadable without the encryption key. The application integrates SQLite for encrypted storage, with a Tkinter-based GUI for a seamless user experience.
                 </p>
                 <p>
                     <strong>Technologies Used:</strong> Python, SQLite, Tkinter, PyCrypto (for AES encryption).<br>
-                    <strong>Challenges:</strong> Ensuring secure key management for AES encryption and preventing SQL injection in SQLite queries.<br>
-                    <strong>Outcome:</strong> Successfully created a functional password manager with robust encryption, capable of securely storing user credentials and providing a simple interface for password management.
+                    <strong>Challenges:</strong> One major challenge was securely managing the encryption key to prevent unauthorized access while ensuring usability. I also had to mitigate SQL injection risks by implementing prepared statements in SQLite queries.<br>
+                    <strong>Impact:</strong> The password manager provides a secure and user-friendly tool for individuals to manage their credentials, reducing the risk of password reuse and enhancing personal security.<br>
+                    <strong>Future Improvements:</strong> I plan to add multi-factor authentication and cloud synchronization features to enhance accessibility while maintaining security.
                 </p>
             </div>
-            <div class="project">
+            <div class="project-card">
                 <h3>Network Vulnerability Scanner (Aug 2024 - Dec 2024)</h3>
                 <p>
-                    I built a network vulnerability scanner to identify potential security risks in network environments. The tool uses Python and Nmap to scan for open ports and services, while Wireshark is employed to analyze network traffic and detect vulnerabilities. The scanner also includes basic intrusion detection features to alert users of potential threats.
+                    The goal of this project was to create a tool that helps network administrators identify and mitigate security risks in their environments. The scanner uses Nmap to detect open ports and services, and Wireshark to analyze network traffic for potential vulnerabilities. I also implemented basic intrusion detection features to alert users of suspicious activity, such as unexpected port scans or unusual traffic patterns.
                 </p>
                 <p>
                     <strong>Technologies Used:</strong> Python, Nmap, Wireshark.<br>
-                    <strong>Challenges:</strong> Parsing and interpreting Nmap scan results accurately, and handling large volumes of network traffic data in Wireshark.<br>
-                    <strong>Outcome:</strong> Delivered a reliable tool that identifies network vulnerabilities, provides actionable insights, and supports basic intrusion detection, enhancing network security for small-scale environments.
+                    <strong>Challenges:</strong> Parsing Nmap’s output into a user-friendly format was complex due to its verbose nature. Additionally, analyzing large volumes of network traffic with Wireshark required optimizing the tool to avoid performance bottlenecks.<br>
+                    <strong>Impact:</strong> The tool has been effective in identifying vulnerabilities in small-scale networks, enabling administrators to take proactive measures to secure their systems.<br>
+                    <strong>Future Improvements:</strong> I aim to integrate machine learning to improve intrusion detection accuracy and add automated remediation suggestions for identified vulnerabilities.
                 </p>
             </div>
         </div>
@@ -94,29 +111,6 @@
         <div class="section" id="resume">
             <h2>Resume</h2>
             <div class="resume-section">
-                <div class="resume-preview" id="resumePreview">
-                    <h3>Preview <span class="toggle-preview" id="togglePreview">[Hide]</span></h3>
-                    <div id="previewContent">
-                        <p><strong>Nandakumar Vuppalapati</strong></p>
-                        <p>(424) 366-6034 | vuppalapatinandakumar@gmail.com</p>
-                        <p><strong>Summary:</strong> Driven Master's student in Computer Science, graduating December 2025, with expertise in cybersecurity, cryptography, and cloud security. Proficient in Python and PowerShell, seeking opportunities to grow as a cybersecurity engineer.</p>
-                        <p><strong>Technical Skills:</strong></p>
-                        <ul>
-                            <li>Cybersecurity: PKI, TLS/SSL, Cryptography, Certificate Lifecycle Management</li>
-                            <li>Programming: Python, PowerShell, Bash</li>
-                            <li>Cloud Security: Azure, Microsoft 365, AWS</li>
-                            <li>Tools: Wireshark, Nmap, Splunk, Burp Suite, Nessus</li>
-                        </ul>
-                        <p><strong>Projects:</strong></p>
-                        <ul>
-                            <li><strong>AES-Encrypted Password Manager (Jan 2024 - May 2024):</strong> Developed a secure password manager using AES-256 encryption, SQLite, and Tkinter.</li>
-                            <li><strong>Network Vulnerability Scanner (Aug 2024 - Dec 2024):</strong> Built a tool using Python, Nmap, and Wireshark to detect network vulnerabilities.</li>
-                        </ul>
-                        <p><strong>Education:</strong></p>
-                        <p>M.S. in Computer Science, Artificial Intelligence, University of South Dakota (Jan 2024 - Dec 2025)</p>
-                        <p><strong>Certifications:</strong> CompTIA Security+</p>
-                    </div>
-                </div>
                 <div class="resume-download">
                     <a href="Nandakumar.pdf" target="_blank" class="preview-btn">Preview Resume</a>
                     <a href="Nandakumar.pdf" download class="download-btn">Download Resume</a>
