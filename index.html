@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -26,6 +28,7 @@
     <div class="container">
         <!-- Header Section -->
         <header id="home">
+            <div id="particles-js"></div>
             <div class="mode-toggle">
                 <button id="modeToggle">Toggle Dark Mode</button>
             </div>
@@ -48,7 +51,7 @@
         </header>
 
         <!-- About Me Section -->
-        <div class="section" id="about">
+        <div class="section" id="about" data-aos="fade-up">
             <h2>About Me</h2>
             <p>
                 I am a driven and dedicated Master's student in Computer Science at the University of South Dakota, set to graduate in December 2025. With a robust technical foundation in cybersecurity, cryptography, certificate lifecycle management, and cloud security, I am proficient in Python and PowerShell for automation and problem-solving. My focus lies in securing modern cloud platforms like Azure and Microsoft 365, and I am highly committed to protecting critical systems and data by addressing emerging threats, ensuring compliance, and adopting innovative security practices. I am actively seeking opportunities to apply my knowledge, drive impactful solutions, and grow as a cybersecurity engineer within a forward-thinking, security-focused organization.
@@ -56,36 +59,46 @@
         </div>
 
         <!-- Portfolio Section -->
-        <div class="section" id="portfolio">
+        <div class="section" id="portfolio" data-aos="fade-up">
             <h2>Portfolio</h2>
-            <div class="project-card">
-                <h3>AES-Encrypted Password Manager (Jan 2024 - May 2024)</h3>
-                <p>
-                    This project aimed to provide a secure solution for managing passwords in an era where data breaches are increasingly common. I developed a password manager that uses AES-256 encryption to protect user credentials, ensuring that even if the database is compromised, the data remains unreadable without the encryption key. The application integrates SQLite for encrypted storage, with a Tkinter-based GUI for a seamless user experience.
-                </p>
-                <p>
-                    <strong>Technologies Used:</strong> Python, SQLite, Tkinter, PyCrypto (for AES encryption).<br>
-                    <strong>Challenges:</strong> One major challenge was securely managing the encryption key to prevent unauthorized access while ensuring usability. I also had to mitigate SQL injection risks by implementing prepared statements in SQLite queries.<br>
-                    <strong>Impact:</strong> The password manager provides a secure and user-friendly tool for individuals to manage their credentials, reducing the risk of password reuse and enhancing personal security.<br>
-                    <strong>Future Improvements:</strong> I plan to add multi-factor authentication and cloud synchronization features to enhance accessibility while maintaining security.
-                </p>
-            </div>
-            <div class="project-card">
-                <h3>Network Vulnerability Scanner (Aug 2024 - Dec 2024)</h3>
-                <p>
-                    The goal of this project was to create a tool that helps network administrators identify and mitigate security risks in their environments. The scanner uses Nmap to detect open ports and services, and Wireshark to analyze network traffic for potential vulnerabilities. I also implemented basic intrusion detection features to alert users of suspicious activity, such as unexpected port scans or unusual traffic patterns.
-                </p>
-                <p>
-                    <strong>Technologies Used:</strong> Python, Nmap, Wireshark.<br>
-                    <strong>Challenges:</strong> Parsing Nmap’s output into a user-friendly format was complex due to its verbose nature. Additionally, analyzing large volumes of network traffic with Wireshark required optimizing the tool to avoid performance bottlenecks.<br>
-                    <strong>Impact:</strong> The tool has been effective in identifying vulnerabilities in small-scale networks, enabling administrators to take proactive measures to secure their systems.<br>
-                    <strong>Future Improvements:</strong> I aim to integrate machine learning to improve intrusion detection accuracy and add automated remediation suggestions for identified vulnerabilities.
-                </p>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>AES-Encrypted Password Manager (Jan 2024 - May 2024)</h3>
+                        <p>
+                            This project was born out of a need to provide a secure and accessible solution for managing passwords amidst rising cyber threats. I designed and developed a password manager that employs AES-256 encryption to safeguard user credentials, ensuring data remains secure even in the event of a breach. SQLite serves as the encrypted storage backend, and I built a user-friendly GUI using Tkinter for seamless interaction.
+                        </p>
+                        <div class="project-details">
+                            <p>
+                                <strong>Technologies Used:</strong> Python, SQLite, Tkinter, PyCrypto (for AES encryption).<br>
+                                <strong>Challenges:</strong> Securely managing the encryption key was a significant challenge, as was preventing SQL injection vulnerabilities. I implemented secure key storage practices and used prepared statements to mitigate risks.<br>
+                                <strong>Impact:</strong> The tool empowers users to manage their passwords securely, reducing the risk of password reuse and enhancing personal cybersecurity. It has been tested with a small user group, receiving positive feedback on its usability and security features.<br>
+                                <strong>Future Improvements:</strong> I plan to integrate multi-factor authentication, cloud synchronization with end-to-end encryption, and a password strength analyzer to further enhance the tool's capabilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3>Network Vulnerability Scanner (Aug 2024 - Dec 2024)</h3>
+                        <p>
+                            With the increasing complexity of network environments, I developed a vulnerability scanner to help administrators identify and mitigate security risks. The tool leverages Nmap for port and service scanning and Wireshark for network traffic analysis, with added features for basic intrusion detection to alert users of potential threats like unauthorized port scans.
+                        </p>
+                        <div class="project-details">
+                            <p>
+                                <strong>Technologies Used:</strong> Python, Nmap, Wireshark.<br>
+                                <strong>Challenges:</strong> Parsing Nmap's verbose output into actionable insights was complex, and handling large volumes of network traffic data required optimization to prevent performance issues.<br>
+                                <strong>Impact:</strong> The scanner has proven effective in identifying vulnerabilities in small-scale networks, enabling administrators to take proactive measures. It has been used in a university lab setting to secure test networks.<br>
+                                <strong>Future Improvements:</strong> Future iterations will include machine learning models for improved intrusion detection, automated remediation suggestions, and a web-based dashboard for easier access to scan results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Blogs Section -->
-        <div class="section" id="blog">
+        <div class="section" id="blog" data-aos="fade-up">
             <h2>Blog</h2>
             <div class="blog-list">
                 <a href="#blog1" class="blog-link">Securing the Cloud: Best Practices for Azure and Microsoft 365</a>
@@ -108,18 +121,18 @@
         </div>
 
         <!-- Resume Section -->
-        <div class="section" id="resume">
+        <div class="section" id="resume" data-aos="fade-up">
             <h2>Resume</h2>
             <div class="resume-section">
                 <div class="resume-download">
-                    <a href="Nandakumar.pdf" target="_blank" class="preview-btn">Preview Resume</a>
-                    <a href="Nandakumar.pdf" download class="download-btn">Download Resume</a>
+                    <a href="./Nandakumar.pdf" target="_blank" class="preview-btn">Preview Resume</a>
+                    <a href="./Nandakumar.pdf" download class="download-btn">Download Resume</a>
                 </div>
             </div>
         </div>
 
         <!-- Contact Section -->
-        <div class="section" id="contact">
+        <div class="section" id="contact" data-aos="fade-up">
             <h2>Contact</h2>
             <div class="contact-list">
                 <p>
@@ -128,11 +141,11 @@
                 </p>
                 <p>
                     <i class="fab fa-linkedin contact-icon"></i>
-                    <a href="https://www.linkedin.com/in/nandakumar-vuppalapati-12b41932a" target="_blank">LinkedIn Profile</a>
+                    <a href="https://www.linkedin.com/in/v-nandakumar/" target="_blank">LinkedIn Profile</a>
                 </p>
                 <p>
                     <i class="fab fa-github contact-icon"></i>
-                    <a href="https://nandakumarvupp.github.io/portfolio/" target="_blank">GitHub Portfolio</a>
+                    <a href="https://nandakumarvupp.github.io/" target="_blank">GitHub Portfolio</a>
                 </p>
             </div>
         </div>
@@ -143,6 +156,79 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Scripts -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#3498db' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#3498db', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Update particle colors for dark mode
+        document.getElementById('modeToggle').addEventListener('click', () => {
+            const particles = document.getElementById('particles-js');
+            if (document.body.classList.contains('dark-mode')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: '#5da8e8' },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.5, random: false },
+                        size: { value: 3, random: true },
+                        line_linked: { enable: true, distance: 150, color: '#5da8e8', opacity: 0.4, width: 1 },
+                        move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                    },
+                    retina_detect: true
+                });
+            } else {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: '#3498db' },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.5, random: false },
+                        size: { value: 3, random: true },
+                        line_linked: { enable: true, distance: 150, color: '#3498db', opacity: 0.4, width: 1 },
+                        move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
