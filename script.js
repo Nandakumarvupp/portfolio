@@ -18,20 +18,6 @@ document.querySelectorAll('.blog-link').forEach(anchor => {
     });
 });
 
-// Toggle resume preview visibility
-const togglePreview = document.getElementById('togglePreview');
-const previewContent = document.getElementById('previewContent');
-
-togglePreview.addEventListener('click', () => {
-    if (previewContent.style.display === 'none') {
-        previewContent.style.display = 'block';
-        togglePreview.textContent = '[Hide]';
-    } else {
-        previewContent.style.display = 'none';
-        togglePreview.textContent = '[Show]';
-    }
-});
-
 // Dark mode toggle functionality
 const modeToggle = document.getElementById('modeToggle');
 const body = document.body;
