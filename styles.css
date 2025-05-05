@@ -370,6 +370,7 @@ body.dark-mode .blog-content {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 20px 0;
 }
 
 .resume-download {
@@ -379,54 +380,78 @@ body.dark-mode .blog-content {
 }
 
 .preview-btn, .download-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 12px 25px;
     color: #fff;
     text-decoration: none;
     border-radius: 25px;
     font-size: 1.1em;
     font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.preview-btn i, .download-btn i {
+    margin-right: 8px;
 }
 
 .preview-btn {
     background-color: #2ecc71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
 }
 
 .preview-btn:hover {
     background-color: #27ae60;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.7);
 }
 
 .download-btn {
     background-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
 }
 
 .download-btn:hover {
     background-color: #2980b9;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.7);
 }
 
 body.dark-mode .preview-btn {
     background-color: #2ecc71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
 }
 
 body.dark-mode .preview-btn:hover {
     background-color: #27ae60;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.7);
 }
 
 body.dark-mode .download-btn {
     background-color: #5da8e8;
+    box-shadow: 0 0 10px rgba(93, 168, 232, 0.5);
 }
 
 body.dark-mode .download-btn:hover {
     background-color: #4a90d1;
+    box-shadow: 0 0 20px rgba(93, 168, 232, 0.7);
 }
 
 /* Contact Section Styles */
 .contact-list p {
     font-size: 1.1em;
-    margin: 10px 0;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.contact-list p:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode .contact-list p:hover {
+    background-color: #3a3a3a;
 }
 
 .contact-icon {
@@ -449,6 +474,42 @@ body.dark-mode .contact-list a {
 }
 
 .contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+body.dark-mode .footer {
+    background: #2c2c2c;
+    border-top: 1px solid #444;
+}
+
+.footer p {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+body.dark-mode .footer p {
+    color: #b0b0b0;
+}
+
+.footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+body.dark-mode .footer a {
+    color: #5da8e8;
+}
+
+.footer a:hover {
     text-decoration: underline;
 }
 
